@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Partially Editable Text Example</string>
+    <string name="btn_caption">Show</string>
+    <string name="base_text">Have you    the alarm clock? (reset)</string>
+    <string name="base_text2">What have you    with your hair? (do)</string>
+    <string name="dialog_msg">You typed: %1$s</string>
+    <string name="dialog_btn">OK</string>
+
+</resources>
