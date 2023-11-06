@@ -55,6 +55,7 @@ class PartiallyEditableText (context: Context, attrs: AttributeSet?) :
         private set
 
     private val editableTextWatcher: EditableTextWatcher = EditableTextWatcher()
+    private var textChangedListeners: ArrayList<TextWatcher>? = null
 
     init {
         isSaveEnabled = true
@@ -178,11 +179,11 @@ class PartiallyEditableText (context: Context, attrs: AttributeSet?) :
     }
 
     private fun refreshText() {
-        removeTextChangedListener(editableTextWatcher)
+        clearAllTextChangeListeners()
         selfEdited = true
         super.setText(getDisplayedText())
         selfEdited = false
-        addTextChangedListener(editableTextWatcher)
+        reapplyTextChangeListeners()
     }
 
     private fun applyChanges(text: String) {
@@ -291,6 +292,29 @@ class PartiallyEditableText (context: Context, attrs: AttributeSet?) :
         if (editableText != null) {
             setCursorPosition()
         }
+    }
+
+    override fun addTextChangedListener(watcher: TextWatcher?) {
+        if (textChangedListeners == null) {
+            textChangedListeners = ArrayList<TextWatcher>()
+        }
+        if (watcher != null) {
+            textChangedListeners!!.add(watcher)
+        }
+        super.addTextChangedListener(watcher)
+    }
+
+    override fun removeTextChangedListener(watcher: TextWatcher?) {
+        textChangedListeners!!.remove(watcher)
+        super.removeTextChangedListener(watcher)
+    }
+
+    private fun clearAllTextChangeListeners(){
+        textChangedListeners!!.forEach { it -> super.removeTextChangedListener(it) }
+    }
+
+    private fun reapplyTextChangeListeners(){
+        textChangedListeners!!.forEach { it -> super.addTextChangedListener(it) }
     }
 
     class SavedState : BaseSavedState {
