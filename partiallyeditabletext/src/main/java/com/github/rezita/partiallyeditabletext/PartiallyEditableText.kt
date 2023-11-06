@@ -9,11 +9,11 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
 import android.util.AttributeSet
-import android.util.Log
 import android.util.SparseArray
 import android.view.View
 import android.view.View.OnClickListener
 import androidx.appcompat.widget.AppCompatEditText
+
 
 /**
  * This is a partly editable text that means
@@ -110,10 +110,7 @@ class PartiallyEditableText (context: Context, attrs: AttributeSet?) :
         when (state) {
             is SavedState -> {
                 //val saveState = SavedState(state)
-                Log.i("restoreOriginal", state.baseText)
                 super.onRestoreInstanceState(state.superState)
-                Log.i("text", text.toString())
-
                 editableText = state.editableText
                 editableStartIndex = state.editableStartIndex
                 baseText = state.baseText
@@ -331,7 +328,7 @@ class PartiallyEditableText (context: Context, attrs: AttributeSet?) :
         constructor(parcelable: Parcelable?) : super(parcelable)
 
         override fun writeToParcel(out: Parcel, flags: Int) {
-            Log.i("write to parcel", "writet to parcel")
+            super.writeToParcel(out, flags)
             super.writeToParcel(out, flags)
             out.writeString(editableText)
             out.writeString(baseText)
