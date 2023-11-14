@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.github.rezita.partiallyeditabletext'
+    namespace 'com.github.rezita.partiallyeditabletext.sample'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.github.rezita.partiallyeditabletext"
+        applicationId "com.github.rezita.partiallyeditabletext.sample"
         minSdk 24
         targetSdk 34
         versionCode 1

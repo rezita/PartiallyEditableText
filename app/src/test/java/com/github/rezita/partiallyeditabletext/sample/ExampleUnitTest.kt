@@ -1,4 +1,4 @@
-package com.github.rezita.partiallyeditabletext
+package com.github.rezita.partiallyeditabletext.sample
 
 import org.junit.Test
 
