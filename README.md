@@ -6,6 +6,9 @@ PartiallyEditableText is an android library that allows the user to edit (overwr
 PartiallyEditableText can be used in any project where you use text that needs to be completed with missing information for some reason, for example in 'fill in the gap' quizzes.
 There is a sample project under the app/../sample package.
 
+![Screenshot_01s](https://github.com/rezita/PartiallyEditableText/assets/43845243/19aa0b10-5e7a-4817-80fc-de4c4952b3ff)
+![Screenshot_02s](https://github.com/rezita/PartiallyEditableText/assets/43845243/6b9c6787-a6f3-4ce8-a172-b9d8c3ab1027)
+
 
 # Dependency (Setup)
 At the moment for using PartiallyEditableText you need a github personal access token and a github account (username).
