@@ -4,7 +4,7 @@ PartiallyEditableText is an android library that allows the user to edit (overwr
 
 # Showcase
 PartiallyEditableText can be used in any project where you use text that needs to be completed with missing information for some reason, for example in 'fill in the gap' quizzes.
-There is a sample project under the sample package.
+There is a sample project under the app/../sample package.
 
 
 # Dependency (Setup)
