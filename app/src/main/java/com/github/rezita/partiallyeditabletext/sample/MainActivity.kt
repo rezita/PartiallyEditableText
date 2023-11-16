@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        val btn = findViewById<Button>(R.id.button)
-        btn.setOnClickListener { showResponseDialog() }
+        setCliclListener(R.id.button, R.id.editable)
+        setCliclListener(R.id.button2, R.id.editable2)
     }
 
     fun showWhatTyped() {
@@ -38,8 +38,12 @@ class MainActivity : AppCompatActivity() {
         ).show()
     }
 
-    private fun showResponseDialog() {
-        val editText = findViewById<PartiallyEditableText>(R.id.editable)
+    private fun setCliclListener(buttonId: Int, editTextId: Int){
+        val btn = findViewById<Button>(buttonId)
+        val editText = findViewById<PartiallyEditableText>(editTextId)
+        btn.setOnClickListener { showResponseDialog(editText) }
+    }
+    private fun showResponseDialog(editText: PartiallyEditableText) {
         val typed = editText.editableText
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder

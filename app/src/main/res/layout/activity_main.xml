@@ -11,21 +11,24 @@
         android:id="@+id/editable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
         android:cursorVisible="true"
         android:ems="18"
         android:inputType="textMultiLine|text"
         android:singleLine="false"
         android:textSize="24sp"
         app:baseText="@string/base_text"
+        app:editableMaxLength="10"
+        app:editableMinLength="8"
         app:editableStartIndex="9"
         app:editableTextColor="#3F51B5"
         app:editableTextStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:editableMaxLength="10"
-        app:editableMinLength="8" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
@@ -36,5 +39,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editable" />
+
+    <com.github.rezita.partiallyeditabletext.PartiallyEditableText
+        android:id="@+id/editable2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:cursorVisible="true"
+        android:ems="18"
+        android:inputType="textMultiLine|text"
+        android:singleLine="false"
+        android:textSize="24sp"
+        app:baseText="@string/base_text2"
+        app:editableMaxLength="10"
+        app:editableMinLength="8"
+        app:editableStartIndex="28"
+        app:editableTextColor="#4CAF50"
+        app:editableTextStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editable2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
