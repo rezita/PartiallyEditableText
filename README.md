@@ -17,7 +17,7 @@ For adding the package dependency, merge the following lines to your root `build
 
 ```
 dependencies {
-    implementation 'io.github.rezita:partiallyeditabletext:0.0.2'    
+    implementation 'io.github.rezita:partiallyeditabletext:0.0.3'    
 }
 ```
 
