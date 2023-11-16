@@ -235,7 +235,7 @@ class PartiallyEditableText (context: Context, attrs: AttributeSet?) :
 
         val lengthDiff = editableMinLength - editableText.length
         if (lengthDiff > 0) {
-            return editableText + " ".repeat(lengthDiff)
+            return editableText + "\u00A0".repeat(lengthDiff)
         }
         return editableText
     }
